@@ -1,0 +1,137 @@
+button {
+    display: flex;
+    align-items: center;
+  }
+  .navber {
+    height: 150px;
+  }
+  .coin {
+    width: 10%;
+  }
+  .pcard {
+    margin-top: 10%;
+  
+    width: 80%;
+    height: 50%;
+  }
+  .pimg {
+    height: 30%;
+    width: 70%;
+  }
+  .popup {
+    width: 80%;
+  }
+  #bfpoke {
+    margin: auto;
+  }
+  .space {
+    height: 40px;
+  }
+  .cpcard {
+    border: 5px black;
+    border-radius: 15px;
+    background: gray;
+    width: 85%;
+  }
+  
+  .rpcard {
+    border: 5px black;
+    border-radius: 15px;
+    background: darkturquoise;
+    width: 85%;
+  }
+  .epcard {
+    border: 5px black;
+    border-radius: 15px;
+    background: magenta;
+    width: 85%;
+  }
+  .lpcard {
+    border: 5px black;
+    border-radius: 15px;
+    background: gold;
+    width: 85%;
+  }
+  #battlechoose {
+    width: 100%;
+  }
+  .battle-img {
+    width: 100px;
+  }
+  
+  #enemy1 {
+    margin-bottom: 120px;
+  }
+  .battle-img-little {
+    width: 150px;
+  }
+  #hp_nav {
+    background-color: gainsboro;
+    height: 100px;
+  }
+  #enemy1 {
+    float: inline-end;
+  }
+  
+  .dropbtn {
+    background-color: darkslategray;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  .dropbtn:hover,
+  .dropbtn:focus {
+    background-color: gray;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {
+    background-color: #ddd;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  .ddbb {
+    height: 60px;
+    border: 1px solid lightgray;
+    width: 160px;
+  }
+  .pcenter {
+    text-align: center;
+  }
+  .claim{
+    background-color: darkgrey;
+    border: gray;
+    border-radius: 10px;
+  }
+  .fighting_image{
+    height: 200px;
+    width: auto;
+  }

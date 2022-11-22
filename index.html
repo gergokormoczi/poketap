@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poke Tap</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div id="main">
+      <nav class="navbar navbar-light bg-light" onclick="pluscoin()">
+        <div class="dropdown px-2">
+          <button onclick="myFunction()" class="dropbtn">Menu</button>
+          <div id="myDropdown" class="dropdown-content">
+            <button class="ddbb" onclick="task()">
+              <p class="pcenter">Tasks</p>
+            </button>
+            <button class="ddbb" onclick="stats()">
+              <p class="pcenter">Stats</p>
+            </button>
+          </div>
+        </div>
+
+        <p id="autocoin"></p>
+
+        <p class="float-right px-1" id="pokecoin"></p>
+
+        <img class="coin p-2" src="pokecoin.jpg" alt="" />
+      </nav>
+      <div class="p-3 text-center">
+        <button
+          onclick="battle()"
+          type="button "
+          class="btn btn-dark mx-auto py-1"
+        >
+          Battle
+        </button>
+        <p class="">Battleing costs 10,000 coins</p>
+        <p class="">And if you win, you get 50,000 coins</p>
+      </div>
+
+      <div class="p-4 text-center">
+        <button
+          onclick="bfpoke()"
+          id="bfpoke"
+          type="button "
+          class="btn btn-light mx-auto"
+        >
+          <p id="pl"></p>
+        </button>
+      </div>
+
+      <h3 onclick="pluscoin()" class="text-center p-5">Pokemons</h3>
+
+
+
+
+
+
+
+
+      <div class="PCARDS text-center" onclick="pluscoin()">
+        <!--legendaries-->
+        <div id="tyranitar" class="py-5">
+          <div class="mx-auto lpcard">
+            <h5>Tyranitar</h5>
+
+            <div class="float-left"><p id="tyranitar_level"></p></div>
+
+            <div class="pimg mx-auto">
+              <img
+                class="pimg img-fluid"
+                src="https://static.pokemonpets.com/images/PokemonAssets/250px-248Tyranitar.webp"
+                alt=""
+              />
+            </div>
+
+            <button
+              onclick="tyranitar_level_up()"
+              type="button "
+              class="btn btn-dark mx-auto"
+            >
+              upgrade tyranitar
+              <p id="tyranitar_cost"></p>
+            </button>
+            <div class="space"></div>
+          </div>
+          <div class="space"></div>
+        </div>
+
+        <div id="hydre" class="py-5">
+          <div class="mx-auto lpcard">
+            <h5>Hydregion</h5>
+
+            <div class="float-left"><p id="hydre_level"></p></div>
+
+            <div class="pimg mx-auto">
+              <img
+                class="pimg img-fluid"
+                src="https://static.pokemonpets.com/images/PokemonAssets/250px-635Hydreigon.webp"
+                alt=""
+              />
+            </div>
+
+            <button
+              onclick="hydre_level_up()"
+              type="button "
+              class="btn btn-dark mx-auto"
+            >
+              Upgrade hydregion
+              <p id="hydre_cost"></p>
+            </button>
+            <div class="space"></div>
+          </div>
+          <div class="space"></div>
+        </div>
+
+
+
+
+        <!--Epics-->
+        <div id="nidok" class="py-5">
+          <div class="mx-auto epcard">
+            <h5>Nidoking</h5>
+
+            <div class="float-left"><p id="nidok_level"></p></div>
+
+            <div class="pimg mx-auto">
+              <img
+                class="pimg img-fluid"
+                src="nidoking_card.webp"
+                alt=""
+              />
+            </div>
+
+            <button
+              onclick="nidok_level_up()"
+              type="button "
+              class="btn btn-dark mx-auto"
+            >
+              upgrade nidoking
+              <p id="nidok_cost"></p>
+            </button>
+            <div class="space"></div>
+          </div>
+          <div class="space"></div>
+        </div>
+
+
+        <div id="mach" class="py-5">
+          <div class="mx-auto epcard">
+            <h5>Machamp</h5>
+
+            <div class="float-left"><p id="mach_level"></p></div>
+
+            <div class="pimg mx-auto">
+              <img
+                class="pimg img-fluid"
+                src="Machamp.webp"
+                alt=""
+              />
+            </div>
+
+            <button
+              onclick="mach_level_up()"
+              type="button "
+              class="btn btn-dark mx-auto"
+            >
+              upgrade Machamp
+              <p id="mach_cost"></p>
+            </button>
+            <div class="space"></div>
+          </div>
+          <div class="space"></div>
+        </div>
+
+
+        <!--rares-->
+        <div id="meltan" class="py-5">
+          <div class="mx-auto rpcard">
+            <h5>Meltan</h5>
+
+            <div class="float-left"><p id="meltan_level"></p></div>
+
+            <div class="pimg mx-auto">
+              <img
+                class="pimg img-fluid"
+                src="http://static.pokemonpets.com/images/monsters-images-800-800/2808-Shiny-Meltan.png"
+                alt=""
+              />
+            </div>
+
+            <button
+              onclick="meltan_level_up()"
+              type="button "
+              class="btn btn-dark mx-auto"
+            >
+              Upgrade Meltan
+              <p id="meltan_cost"></p>
+            </button>
+            <div class="space"></div>
+          </div>
+          <div class="space"></div>
+        </div>
+
+        <div id="haun" class="py-5">
+          <div class="mx-auto rpcard">
+            <h5>Haunter</h5>
+
+            <div class="float-left"><p id="haun_level"></p></div>
+
+            <div class="pimg mx-auto">
+              <img
+                class="pimg img-fluid"
+                src="https://static.pokemonpets.com/images/monsters-images-800-800/93-Haunter.webp"
+                alt=""
+              />
+            </div>
+
+            <button
+              onclick="haun_level_up()"
+              type="button "
+              class="btn btn-dark mx-auto"
+            >
+              Upgrade haunter
+              <p id="haun_cost"></p>
+            </button>
+            <div class="space"></div>
+          </div>
+          <div class="space"></div>
+        </div>
+
+        <div id="kada" class="py-5">
+          <div class="mx-auto rpcard">
+            <h5>Kadabra</h5>
+            <div class="float-left"><p id="kada_level"></p></div>
+
+            <div class="pimg mx-auto">
+              <img
+                class="pimg img-fluid"
+                src="https://static.pokemonpets.com/images/monsters-images-800-800/64-Kadabra.webp"
+                alt=""
+              />
+            </div>
+
+            <button
+              onclick="kada_level_up()"
+              type="button "
+              class="btn btn-dark mx-auto"
+            >
+              Upgrade kadabra
+              <p id="kada_cost"></p>
+            </button>
+            <div class="space"></div>
+          </div>
+          <div class="space"></div>
+        </div>
+
+        <div id="char" class="py-5">
+          <div class="mx-auto rpcard">
+            <h5>Charmaleon</h5>
+            <div class="float-left"><p id="char_level"></p></div>
+
+            <div class="pimg mx-auto">
+              <img
+                class="pimg img-fluid"
+                src="https://static.pokemonpets.com/images/monsters-images-800-800/5-Charmeleon.webp"
+                alt=""
+              />
+            </div>
+
+            <button
+              onclick="char_level_up()"
+              type="button "
+              class="btn btn-dark mx-auto"
+            >
+              Upgrade charmaleon
+              <p id="char_cost"></p>
+            </button>
+            <div class="space"></div>
+          </div>
+          <div class="space"></div>
+        </div>
+
+        <!--commons-->
+        <div id="vulpix" class="py-5">
+          <div class="cpcard mx-auto">
+            <h5>Vulpix</h5>
+
+            <div class="float-left"><p id="vulpix_level"></p></div>
+
+            <div class="pimg mx-auto">
+              <img
+                class="pimg img-fluid"
+                src="https://static.pokemonpets.com/images/PokemonAssets/250px-037Vulpix.webp"
+                alt=""
+              />
+            </div>
+
+            <button
+              onclick="vulpix_level_up()"
+              type="button "
+              class="btn btn-dark mx-auto"
+            >
+              Upgrade vulpix
+              <p id="vulpix_cost"></p>
+            </button>
+            <div class="space"></div>
+          </div>
+          <div class="space"></div>
+        </div>
+
+        <div id="swab" class="py-5">
+          <div class="cpcard mx-auto">
+            <h5>Swablu</h5>
+
+            <div class="float-left"><p id="swab_level"></p></div>
+
+            <div class="pimg mx-auto">
+              <img
+                class="pimg img-fluid"
+                src="https://static.pokemonpets.com/images/monsters-images-800-800/333-Swablu.webp"
+                alt=""
+              />
+            </div>
+
+            <button
+              onclick="swab_level_up()"
+              type="button "
+              class="btn btn-dark mx-auto"
+            >
+              Upgrade swablu
+              <p id="swab_cost"></p>
+            </button>
+            <div class="space"></div>
+          </div>
+          <div class="space"></div>
+        </div>
+
+        <div id="mag" class="py-5">
+          <div class="cpcard mx-auto">
+            <h5>Magikarp</h5>
+
+            <div class="float-left"><p id="mag_level"></p></div>
+
+            <div class="pimg mx-auto">
+              <img
+                class="pimg img-fluid"
+                src="    https://static.pokemonpets.com/images/monsters-images-800-800/2129-Shiny-Magikarp.webp"
+                alt=""
+              />
+            </div>
+
+            <button
+              onclick="mag_level_up()"
+              type="button "
+              class="btn btn-dark mx-auto"
+            >
+              Upgrade magikarp
+              <p id="mag_cost"></p>
+            </button>
+            <div class="space"></div>
+          </div>
+          <div class="space"></div>
+        </div>
+
+        <div id="dedenne" class="py-5">
+          <div class="cpcard mx-auto">
+            <h5>Dedenne</h5>
+
+            <div class="float-left"><p id="dedenne_level"></p></div>
+
+            <div class="pimg mx-auto">
+              <img
+                class="pimg img-fluid"
+                src="https://static.pokemonpets.com/images/monsters-images-800-800/702-Dedenne.webp"
+                alt=""
+              />
+            </div>
+
+            <button
+              onclick="dedenne_level_up()"
+              type="button "
+              class="btn btn-dark mx-auto"
+            >
+              Upgrade dedenne
+              <p id="dedenne_cost"></p>
+            </button>
+            <div class="space"></div>
+          </div>
+          <div class="space"></div>
+        </div>
+
+        <div id="stunfisk" class=" ">
+          <div class="cpcard mx-auto py-5">
+            <h5>Stunfisk</h5>
+            <div class="float-left"><p id="stunfisk_level"></p></div>
+
+            <div class="pimg mx-auto">
+              <img
+                class="pimg img-fluid"
+                src="https://static.pokemonpets.com/images/monsters-images-800-800/618-Stunfisk.webp"
+                alt=""
+              />
+            </div>
+
+            <button
+              onclick="stunfisk_level_up()"
+              type="button "
+              class="btn btn-dark mx-auto"
+            >
+              Upgrade stunfisk
+              <p class="py-1" id="stun_cost"></p>
+            </button>
+          </div>
+        </div>
+        <div class="space"></div>
+      </div>
+    </div>
+
+
+
+
+<!--Battlechoose-->
+
+
+
+
+
+    <div id="battlechoose" class="text-center">
+      <div class="p-2">
+        <button
+          onclick="back_from_battlechoose()"
+          type="button "
+          class="btn btn-dark mx-auto p-2 float-left"
+        >
+          Back
+        </button>
+      </div>
+
+      <h2 class="py-3">Tap the pokemon you want to fight with</h2>
+      <p class="text-center">You can only fight with rares and legendaries</p>
+
+      <table class="mx-auto">
+        <tr>
+          <td id="tyra_card">
+            <div class="card mx-auto" style="width: 18rem">
+              <img
+                src="https://static.pokemonpets.com/images/PokemonAssets/250px-248Tyranitar.webp"
+                class="battle-img mx-auto"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Tyranitar</h5>
+                <p class="card-text">
+                  HP: 200
+                </p>
+                <p class="card-text">
+                  DMG / Tap: 2
+                </p>
+                <button
+                  onclick="fwtyra()"
+                  type="button "
+                  class="btn btn-dark mx-auto py-2"
+                >
+                  Battle
+                </button>
+              </div>
+            </div>
+          </td>
+          <td id="hydre_card">
+            <div class="card mx-auto" style="width: 18rem">
+              <img
+                src="https://static.pokemonpets.com/images/PokemonAssets/250px-635Hydreigon.webp"
+                class="battle-img mx-auto"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Hydregion</h5>
+                <p class="card-text">
+                  HP: 150
+                </p>
+                <p class="card-text">
+                  DMG / Tap: 2.5
+                </p>
+                <button
+                  onclick="fwhydre()"
+                  type="button "
+                  class="btn btn-dark mx-auto py-2"
+                >
+                  Battle
+                </button>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+
+
+        <tr>
+          <td id="nidok_card">
+            <div class="card mx-auto" style="width: 18rem">
+              <img
+                src="nidoking_card.webp"
+                class="battle-img mx-auto"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Nidoking</h5>
+                <p class="card-text">
+                  HP: 180
+                </p>
+                <p class="card-text">
+                  DMG / Tap: 1.5
+                </p>
+                <button
+                  onclick="fwnidok()"
+                  type="button "
+                  class="btn btn-dark mx-auto py-2"
+                >
+                  Battle
+                </button>
+              </div>
+            </div>
+          </td>
+
+
+          <td id="mach_card">
+            <div class="card mx-auto" style="width: 18rem">
+              <img
+                src="Machamp.webp"
+                class="battle-img mx-auto"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Machamp</h5>
+                <p class="card-text">
+                  HP: 165
+                </p>
+                <p class="card-text">
+                  DMG / Tap: 3
+                </p>
+                <button
+                  onclick="fwmach()"
+                  type="button "
+                  class="btn btn-dark mx-auto py-2"
+                >
+                  Battle
+                </button>
+              </div>
+            </div>
+          </td>
+
+
+        </tr>
+
+
+
+
+
+
+        <tr>
+          <td id="meltan_card">
+            <div class="card mx-auto" style="width: 18rem">
+              <img
+                src="http://static.pokemonpets.com/images/monsters-images-800-800/2808-Shiny-Meltan.png"
+                class="battle-img mx-auto"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Meltan</h5>
+                <p class="card-text">
+                  HP: 100
+                </p>
+                <p class="card-text">
+                  DMG / Tap: 0.5
+                </p>
+                <button
+                  onclick="fwmel()"
+                  type="button "
+                  class="btn btn-dark mx-auto py-2"
+                >
+                  Battle
+                </button>
+              </div>
+            </div>
+          </td>
+          <td id="haun_card">
+            <div class="card mx-auto" style="width: 18rem">
+              <img
+                src="https://static.pokemonpets.com/images/monsters-images-800-800/93-Haunter.webp"
+                class="battle-img mx-auto"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Haunter</h5>
+                <p class="card-text">
+                  <p class="card-text">
+                    HP: 125
+                  </p>
+                  <p class="card-text">
+                    DMG / Tap: 1
+                  </p>
+                <button
+                  onclick="fwhaun()"
+                  type="button "
+                  class="btn btn-dark mx-auto py-2"
+                >
+                  Battle
+                </button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td id="kada_card">
+            <div class="card mx-auto" style="width: 18rem">
+              <img
+                src="https://static.pokemonpets.com/images/monsters-images-800-800/64-Kadabra.webp"
+                class="battle-img mx-auto"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Kadabra</h5>
+                <p class="card-text">
+                  HP: 140
+                </p>
+                <p class="card-text">
+                  DMG / Tap: 1
+                </p>
+                <button
+                  onclick="fwkada()"
+                  type="button "
+                  class="btn btn-dark mx-auto py-2"
+                >
+                  Battle
+                </button>
+              </div>
+            </div>
+          </td>
+          <td id="char_card">
+            <div class="card mx-auto" style="width: 18rem">
+              <img
+                src="https://static.pokemonpets.com/images/monsters-images-800-800/5-Charmeleon.webp"
+                class="battle-img mx-auto"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Charmaleon</h5>
+                <p class="card-text">
+                  HP: 150
+                </p>
+                <p class="card-text">
+                  DMG / Tap: 1.5
+                </p>
+                <button
+                  onclick="fwchar()"
+                  type="button "
+                  class="btn btn-dark mx-auto py-2"
+                >
+                  Battle
+                </button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="battlefield">
+      <div id="battlefieldbg " onclick="damage()">
+        <div id="hp_nav">
+          <div>
+            <p id="enhp" class="p-5 enemy_h_p"></p>
+
+            <p class="p-5 h_p" id="hp"></p>
+          </div>
+        </div>
+
+        <div class="float-end">
+          <img
+            src="nidoking.png"
+            alt=""
+            id="boss1"
+            class="img-fluid"
+          />
+
+          <img
+            src="boss2.png"
+            alt=""
+            id="boss2"
+            class="img-fluid"
+          />
+
+          <img
+            src="https://images.gameinfo.io/pokemon/256/p109f322.png"
+            alt=""
+            id="enemy1"
+            class="img-fluid"
+          />
+        </div>
+
+        <img
+          class="fixed-bottom"
+          id="tyra_f"
+          src="https://static.wikia.nocookie.net/pokemon-daybreak/images/8/84/248b_1.png/revision/latest?cb=20200810154202"
+          alt=""
+        />
+
+        <img
+          class="fixed-bottom"
+          id="hydre_f"
+          src="https://wiki.p-insurgence.com/images/4/45/635b.png"
+          alt=""
+        />
+
+
+        <img
+        class="fixed-bottom fighting_image"
+        id="nidok_f"
+        src="nidok_f.png"
+        alt=""
+      />
+
+      <img
+      class="fixed-bottom fighting_image"
+      id="mach_f"
+      src="Machamp_f.png"
+      alt=""
+    />
+
+        <img
+          class="fixed-bottom battle-img-little"
+          id="mel_f"
+          src="https://nintendoeverything.com/wp-content/uploads/sites/1/nggallery/meltan/meltan-3.jpg"
+          alt=""
+        />
+
+        <img
+          class="fixed-bottom battle-img-little"
+          id="haun_f"
+          src="haunter.png"
+          alt=""
+        />
+
+        <img
+          class="fixed-bottom battle-img-little"
+          id="kada_f"
+          src="https://archives.bulbagarden.net/media/upload/thumb/9/97/064Kadabra.png/250px-064Kadabra.png"
+          alt=""
+        />
+
+        <img
+          class="fixed-bottom battle-img-little"
+          id="char_f"
+          src="https://static.wikia.nocookie.net/pokemon/images/e/ee/Charmeleon_BW_Back.gif/revision/latest/smart/width/300/height/300?cb=20110523221335"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div id="stats" class="">
+      <div class="p-3">
+        <button
+          onclick="back_from_stats()"
+          type="button "
+          class="btn btn-dark mx-auto py-2 float-left"
+        >
+          Back
+        </button>
+      </div>
+      <div class="text-center">
+        <h3>Your stats</h3>
+        <div class="p-5">
+          <p id="wins"></p>
+          <p id="loses"></p>
+          <p id="num_of_pokes"></p>
+          <p id="playtime"></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="tasks" class="">
+      <div class="p-3">
+        <button
+          onclick="back_from_tasks()"
+          type="button "
+          class="btn btn-dark mx-auto py-2 float-left"
+        >
+          Back
+        </button>
+      </div>
+
+      <div class="text-center">
+        <h3>Your Tasks</h3>
+        <div class="p-5 text-center">
+          <p id="task1"></p>
+          <button id="claim_reward" onclick="claim_bosses()" class="claim mx-auto py-4">Claim reward</button>
+          <p id="task2"></p>
+          <button id="claim_reward_20" onclick="claim_20_battle()" class="claim mx-auto py-4">Claim reward</button>
+          <p id="task3"></p>
+          <button id="claim_all_pokes" onclick="claim_all_pokes()" class="claim mx-auto py-4">Claim reward</button>
+        </div>
+      </div>
+
+
+    <script src="app.js"></script>
+    <script src="battle.js"></script>
+    <script src="battlechoose.js"></script>
+    <script src="stat_task.js"></script>
+    <script src="dropdown.js"></script>
+    <script src="level_up.js"></script>
+    <script src="spin.js"></script>
+  </body>
+</html>
